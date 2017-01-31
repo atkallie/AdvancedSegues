@@ -12,7 +12,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    
+    //pass a variable from one view contoller to another
+    //this function gets executed right before the segue from 1 to 2 happens
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toSecondViewController" {
+            
+            let secondVC = segue.destination as! SecondViewController
+            
+            secondVC.str = "Changed!"
+            
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
